@@ -6,9 +6,10 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: 24,
-        horizontal: 18,
+      padding: const EdgeInsets.only(
+        top: 24,
+        bottom: 24,
+        left: 16,
       ),
       decoration: BoxDecoration(
         color: const Color(0xffffcc80),
@@ -18,7 +19,7 @@ class NoteItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ListTile(
-            contentPadding: EdgeInsets.zero,
+            contentPadding: EdgeInsets.only(right: 16,left: 16,),
             title: const Text(
               "First Note ",
               style: TextStyle(
@@ -43,13 +44,13 @@ class NoteItem extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(
                 Icons.delete,
-                size: 32,
+                size: 36,
                 color: Colors.black,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 8),
+            padding: const EdgeInsets.only(right: 16),
             child: Text(
               "May22, 2024 ",
               style: TextStyle(
