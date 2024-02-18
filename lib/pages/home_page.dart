@@ -7,7 +7,15 @@ class HomePae extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: NotesViewBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.cyanAccent,
+        child: const Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
+      ),
+      body: const NotesViewBody(),
     );
   }
 }
