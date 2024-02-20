@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:note_app/pages/home_page.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox("notes_box");
   runApp(const MyApp());
 }
 
@@ -14,9 +17,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
-        brightness:Brightness.dark,
-        fontFamily: "Poppins"
+        brightness: Brightness.dark,
+        fontFamily: "Poppins",
       ),
       home: const HomePae(),
     );
