@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'custom_button.dart';
-import 'custom_text_field.dart';
+import 'add_note_form.dart';
+
 
 class AddModelButtonSheet extends StatelessWidget {
   const AddModelButtonSheet({super.key});
@@ -10,27 +10,7 @@ class AddModelButtonSheet extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.all(16.0),
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 32,
-            ),
-            CustomFormTextField(
-              labelText: 'Title',
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            CustomFormTextField(
-              labelText: 'Context',
-              maxLines: 5,
-            ),
-            SizedBox(
-              height: 90,
-            ),
-            CustomButton(),
-          ],
-        ),
+        child: AddNoteForm(),
       ),
     );
   }
