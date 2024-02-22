@@ -7,7 +7,7 @@ class ShowNoteInitialState extends ShowNoteState {}
 class ShowNoteLoadedState extends ShowNoteState {}
 
 class ShowNoteSuccessState extends ShowNoteState {
-  ShowNoteSuccessState({required this.notes});
+  ShowNoteSuccessState(this.notes);
 
   final List<NoteModel> notes;
 }
