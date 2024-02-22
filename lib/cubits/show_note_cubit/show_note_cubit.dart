@@ -3,8 +3,8 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:note_app/cubits/show_note_cubit/show_note_states.dart';
 import '../../models/note_model.dart';
 
-class AddNoteCubit extends Cubit<ShowNoteState> {
-  AddNoteCubit() : super(ShowNoteInitialState());
+class ShowNoteCubit extends Cubit<ShowNoteState> {
+  ShowNoteCubit() : super(ShowNoteInitialState());
 
   showNotes(NoteModel note) async {
 
