@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/pages/edit_note_page.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({super.key, required this.note});
+
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +38,9 @@ class NoteItem extends StatelessWidget {
                 right: 16,
                 left: 16,
               ),
-              title: const Text(
-                "First Note ",
-                style: TextStyle(
+              title: Text(
+               note.title,
+                style: const TextStyle(
                   fontSize: 26,
                   color: Colors.black,
                 ),
@@ -48,7 +51,7 @@ class NoteItem extends StatelessWidget {
                   bottom: 16,
                 ),
                 child: Text(
-                  "enter your first note enter your first note",
+                  note.context,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.black.withOpacity(0.4),
@@ -67,7 +70,7 @@ class NoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 16),
               child: Text(
-                "May22, 2024 ",
+                note.date,
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.black.withOpacity(0.4),
