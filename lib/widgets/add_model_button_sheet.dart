@@ -10,13 +10,16 @@ class AddModelButtonSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.only(
+          right: 16.0,
+          left: 16,
+          bottom: MediaQuery.of(context).viewInsets.bottom),
       child: BlocProvider(
-        create: (BuildContext context) =>AddNoteCubit(),
+        create: (BuildContext context) => AddNoteCubit(),
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           builder: (context, state) {
             return AbsorbPointer(
-              absorbing: state is AddNoteLoadedState ? true :false,
+              absorbing: state is AddNoteLoadedState ? true : false,
               child: const SingleChildScrollView(
                 child: AddNoteForm(),
               ),
