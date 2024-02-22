@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onPressed});
+  const CustomButton(
+      {super.key, required this.onPressed, this.isLoading = false});
 
   final void Function() onPressed;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +17,21 @@ class CustomButton extends StatelessWidget {
       height: 55,
       minWidth: MediaQuery.of(context).size.width,
       onPressed: onPressed,
-      child: const Text(
-        "Add",
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 18,
-        ),
-      ),
+      child: isLoading
+          ? const SizedBox(
+              height: 25,
+              width: 25,
+              child: CircularProgressIndicator(
+                color: Colors.black,
+              ),
+            )
+          : const Text(
+              "Add",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+              ),
+            ),
     );
   }
 }
