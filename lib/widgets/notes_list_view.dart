@@ -5,15 +5,20 @@ import 'package:note_app/cubits/show_note_cubit/show_note_states.dart';
 import 'package:note_app/models/note_model.dart';
 import 'custom_note_item.dart';
 
-class NotesListView extends StatelessWidget {
+class NotesListView extends StatefulWidget {
   const NotesListView({super.key});
 
+  @override
+  State<NotesListView> createState() => _NotesListViewState();
+}
+
+class _NotesListViewState extends State<NotesListView> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ShowNoteCubit, ShowNoteState>(
       builder: (context, state) {
         List<NoteModel> notes =
-            BlocProvider.of<ShowNoteCubit>(context).notes ?? [];
+            BlocProvider.of<ShowNoteCubit>(context).showNotes();
         return ListView.builder(
           padding: EdgeInsets.zero,
           physics: const BouncingScrollPhysics(),

@@ -6,10 +6,9 @@ import '../../models/note_model.dart';
 class ShowNoteCubit extends Cubit<ShowNoteState> {
   ShowNoteCubit() : super(ShowNoteInitialState());
 
-  List<NoteModel>? notes;
-
-  showNotes(NoteModel note) async {
+  showNotes() {
     var noteBox = Hive.box<NoteModel>("notes_box");
-    notes = noteBox.values.toList();
+    List<NoteModel> notes = noteBox.values.toList();
+    return notes;
   }
 }
