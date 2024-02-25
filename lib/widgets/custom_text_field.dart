@@ -4,12 +4,16 @@ class CustomFormTextField extends StatelessWidget {
   const CustomFormTextField({
     super.key,
     this.onSaved,
-    required this.labelText,
+    this.labelText,
     this.maxLines = 1,
+    this.onChanged,
+     this.hintText,
   });
 
+  final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
-  final String labelText;
+  final String? labelText;
+  final String? hintText;
   final int maxLines;
 
   @override
@@ -24,11 +28,13 @@ class CustomFormTextField extends StatelessWidget {
       },
       maxLines: maxLines,
       onSaved: onSaved,
+      onChanged: onChanged,
       decoration: InputDecoration(
         labelStyle: const TextStyle(
           color: Colors.cyanAccent,
         ),
-        label: Text(labelText),
+        label: Text(labelText!),
+        hintText: hintText,
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: const BorderSide(
