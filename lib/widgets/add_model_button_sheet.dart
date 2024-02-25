@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/cubits/add_note_cubit/add_note_states.dart';
+import 'package:note_app/cubits/show_note_cubit/show_note_cubit.dart';
 import 'add_note_form.dart';
 
 class AddModelButtonSheet extends StatelessWidget {
@@ -30,6 +31,7 @@ class AddModelButtonSheet extends StatelessWidget {
               debugPrint("Failure ${state.errorMessage}");
             }
             if (state is AddNoteSuccessState) {
+              BlocProvider.of<ShowNoteCubit>(context).showNotes();
               Navigator.pop(context);
             }
           },
