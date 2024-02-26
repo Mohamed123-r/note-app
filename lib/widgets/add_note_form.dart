@@ -36,7 +36,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onSaved: (value) {
               title = value;
             },
-            labelText: 'Title',
+            hintText: 'Title',
           ),
           const SizedBox(
             height: 20,
@@ -45,7 +45,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onSaved: (value) {
               subTitle = value;
             },
-            labelText: 'Context',
+            hintText: 'Context',
             maxLines: 5,
           ),
           const SizedBox(
@@ -64,8 +64,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      var dateTime = DateTime.now() ;
-                      var formatDateTime =DateFormat("dd,M,yyyy").format(dateTime);
+                      var dateTime = DateTime.now();
+                      var formatDateTime =
+                          DateFormat("dd,M,yyyy").format(dateTime);
                       var noteModel = NoteModel(
                         title: title!,
                         context: subTitle!,

@@ -4,15 +4,14 @@ class CustomFormTextField extends StatelessWidget {
   const CustomFormTextField({
     super.key,
     this.onSaved,
-    this.labelText,
     this.maxLines = 1,
     this.onChanged,
-     this.hintText,
+    this.hintText,
   });
 
   final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
-  final String? labelText;
+
   final String? hintText;
   final int maxLines;
 
@@ -33,7 +32,6 @@ class CustomFormTextField extends StatelessWidget {
         labelStyle: const TextStyle(
           color: Colors.cyanAccent,
         ),
-        label: Text(labelText!),
         hintText: hintText,
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
