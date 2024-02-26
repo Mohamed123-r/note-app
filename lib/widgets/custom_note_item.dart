@@ -24,9 +24,9 @@ class NoteItem extends StatelessWidget {
       },
       child: Container(
         padding: const EdgeInsets.only(
-          top: 24,
-          bottom: 24,
-          left: 16,
+          top: 16,
+          bottom: 16,
+          left: 12,
         ),
         decoration: BoxDecoration(
           color: Color(note.color),
@@ -42,6 +42,8 @@ class NoteItem extends StatelessWidget {
               ),
               title: Text(
                note.title,
+                maxLines: 1,
+                overflow:TextOverflow.ellipsis,
                 style: const TextStyle(
                   fontSize: 26,
                   color: Colors.black,
@@ -49,11 +51,13 @@ class NoteItem extends StatelessWidget {
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(
-                  top: 16.0,
-                  bottom: 16,
+                  top: 8,
+                  bottom: 8,
                 ),
                 child: Text(
                   note.context,
+                  maxLines: 2,
+                  overflow:TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.black.withOpacity(0.4),
