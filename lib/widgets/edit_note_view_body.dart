@@ -5,6 +5,8 @@ import 'package:note_app/models/note_model.dart';
 import 'package:note_app/widgets/custom_app_bar.dart';
 import 'package:note_app/widgets/custom_text_field.dart';
 
+import 'edit_color_list_item.dart';
+
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key, required this.note});
 
@@ -62,6 +64,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               hintText: widget.note.context,
               maxLines: 5,
             ),
+            EditColorListItem(note: widget.note,),
           ],
         ),
       ),
