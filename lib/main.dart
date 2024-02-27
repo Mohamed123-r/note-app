@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:note_app/models/note_model.dart';
-import 'package:note_app/pages/home_page.dart';
+import 'package:note_app/pages/splash_page.dart';
 import 'package:note_app/simple_bloc_observer.dart';
 
 import 'cubits/show_note_cubit/show_note_cubit.dart';
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           fontFamily: "Poppins",
         ),
-        home: const HomePae(),
+        home: SplashPage(),
       ),
     );
   }
